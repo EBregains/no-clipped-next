@@ -8,7 +8,7 @@ interface ProductShopFormProps {
 }
 
 export const ProductShopForm = ({ product }: ProductShopFormProps) => {
-  let shipmentOptions = [
+  const shipmentOptions = [
     { key: "no-shipment", text: "Retiro por sucursal", price: 0 },
     { key: "shipment", text: "Envio dentro de Santa Fe Capital", price: +5000 }
   ]

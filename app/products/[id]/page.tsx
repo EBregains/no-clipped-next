@@ -11,7 +11,7 @@ export default async function Product({
 }) {
 
   const id = (await params).id
-  let product: Product | undefined = productos.find(product => (product.url == id))
+  const product: Product | undefined = productos.find(product => (product.url == id))
 
   return <>
     {product != undefined ?

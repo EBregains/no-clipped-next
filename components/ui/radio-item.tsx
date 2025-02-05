@@ -22,4 +22,8 @@ export async function RadioItemSmall({ value, name, label, required }: { value: 
   </div>
 }
 
-export default { RadioItemLarge, RadioItemSmall }
+const RadioItem = {
+  RadioItemLarge,
+  RadioItemSmall
+}
+export default RadioItem;

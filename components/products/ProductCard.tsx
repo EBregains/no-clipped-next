@@ -33,6 +33,11 @@ export default async function ProductCard({
         </>
         }
       </div>
+      {subtitle != null ?
+        <p>
+
+        </p> :
+        <p></p>}
     </div>
   </Link>
 }
