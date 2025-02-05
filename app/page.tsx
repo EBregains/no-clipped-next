@@ -5,9 +5,9 @@ import { productos } from "@/config";
 
 export default function Home() {
   return (
-    <div className="font-[family-name:var(--font-geist-sans)]">
+    <div className="font-[family-name:var(--font-geist-sans)] mb-24">
       <Hero />
-      <ProductList title="Novedades">
+      <ProductList title="Nuevo">
         {productos.map(product => {
           return <ProductCard
             key={product.id}

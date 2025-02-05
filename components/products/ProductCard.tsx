@@ -17,8 +17,8 @@ export default async function ProductCard({
   price: number,
   discount?: number,
 }) {
-  return <Link href={"/products/" + url} className="w-64 block group hover:scale-105  transition-all duration-300 cursor-pointer ">
-    <img src={image_url} alt="Imagen" className="size-64 object-cover rounded-sm border-[1px] border-slate-700 border-opacity-15 group-hover:border-opacity-35 group-hover:shadow-sm" />
+  return <Link href={"/products/" + url} className="w-96 block group hover:scale-[102%]  transition-all duration-300 cursor-pointer ">
+    <img src={image_url} alt="Imagen" className="w-96 h-[576px] object-cover rounded-xs border-[1px] border-slate-300 border-opacity-15 group-hover:border-opacity-35 group-hover:shadow-xs" />
     <div className="flex flex-col w-full h-[72px] mt-2 ">
       <div className="flex items-center">
         {icons.Shirt}

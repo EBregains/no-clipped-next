@@ -1,7 +1,7 @@
 
 import { PlaceOrder } from '@/app/actions'
 import { FormatToARS } from '@/utils/utils'
-import RadioItemLarge from '../ui/radio-item'
+import { RadioItemLarge, RadioItemSmall } from '../ui/radio-item'
 
 interface ProductShopFormProps {
   product: Product
@@ -14,36 +14,31 @@ export const ProductShopForm = ({ product }: ProductShopFormProps) => {
   ]
 
   return (
-    <div className="w-full p-6 font-[family-name:var(--font-geist-sans)]">
+    <div className="flex flex-col w-full max-w-[600px] h-full p-6 font-[family-name:var(--font-geist-sans)]">
       <h2 className="text-2xl font-semibold mb-4">{product.title}</h2>
 
-      <form action={PlaceOrder} className="space-y-4">
+      <form action={PlaceOrder} className="flex flex-col flex-1 space-y-4">
         <div className="mb-4">
           <p className="text-lg opacity-35 line-through font-normalnpm  font-[family-name:var(--font-geist-mono)]">{FormatToARS(product.price)}</p>
           <label htmlFor="price" className="font-bold font-[family-name:var(--font-geist-mono)] inline-block text-3xl" >{FormatToARS(product.price - (product.price * product.discount))}</label>
           <input name="price" value={product.price * (1 - product.discount)} id='price' readOnly hidden></input>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <p className="block text-sm font-medium text-gray-900">
             Seleccionar Talle
-          </label>
+          </p>
           <div className="flex gap-2 mt-2">
-            {product.sizes.map((size) => (
-              <button
-                key={size}
-                type="button"
-                className={`py-2 px-2 text-sm size-10 border rounded-md font-[family-name:var(--font-geist-mono)]
-`}
-              >
-                {size}
-              </button>
+            {product.sizes.map((size, i) => (
+              <div key={i}>
+                <RadioItemSmall value={size} name="size" label={size} required={false} />
+              </div>
             ))}
           </div>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700">
+          <p className="block text-sm font-medium text-gray-900">
             Seleccionar Envio
-          </label>
+          </p>
           <div className="flex flex-col gap-2 mt-2 w-full ">
             {shipmentOptions.map((shipment) => (
               <div key={shipment.key}>
@@ -52,20 +47,16 @@ export const ProductShopForm = ({ product }: ProductShopFormProps) => {
             ))}
           </div>
         </div>
-
-        <button
-          type="submit"
-          className="w-full bg-slate-950 text-white py-2 px-4 rounded-md border-[1px]
-            hover:bg-slate-100  border-slate-950 hover:text-slate-950 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-300"
-        >
-          Add to Cart
-        </button>
+        <div className='h-full flex flex-1 items-end justify-end'>
+          <button
+            type="submit"
+            className="w-full h-12 uppercase font-[family-name:var(--font-geist-mono)] bg-slate-950 text-white py-2 px-4 rounded-md border-[1px] cursor-pointer
+            hover:bg-slate-700  border-slate-950  disabled:bg-gray-300 disabled:cursor-not-allowed transition-all duration-300"
+          >
+            Comprar
+          </button>
+        </div>
       </form>
-
-      <div className="mt-4 text-sm text-gray-500">
-        <p>In stock: {product.inStock ? 'Yes' : 'No'}</p>
-        <p>Slug: {product.url}</p>
-      </div>
     </div>
   )
 }

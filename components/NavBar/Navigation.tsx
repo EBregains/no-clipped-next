@@ -2,7 +2,7 @@ import { routes } from "@/config"
 import Link from "next/link"
 
 export default async function Navigation() {
-  return <div className="flex items-center justify-start font-[family-name:var(--font-geist-mono)]">
+  return <div className="hidden md:flex items-center justify-start font-[family-name:var(--font-geist-mono)]">
     {routes.map(route => {
       return <div
         className="relative group uppercase h-full leading-4 font-light opacity-90 

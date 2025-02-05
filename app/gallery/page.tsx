@@ -42,39 +42,14 @@ export default async function Gallery() {
     ],
   };
 
-  return <div>
-    <main className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Gallery</h1>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Catalogs</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {organizedImages.catalogs.map((catalog) => (
-            <div key={catalog.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img src={catalog.coverImage} alt={catalog.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-medium">{catalog.title}</h3>
-                <p className="text-gray-600">{catalog.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Photo Shoots</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {organizedImages.photoShoots.map((shoot) => (
-            <div key={shoot.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img src={shoot.coverImage} alt={shoot.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h3 className="text-xl font-medium">{shoot.title}</h3>
-                <p className="text-gray-600">{shoot.date}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </main>
+  return <div className="grid grid-cols-5 my-1 grid-rows-9 gap-1">
+    <img src="./No.clipped-5.jpg" className="size-full object-cover row-span-3" />
+    <img src="./No.clipped-12.jpg" className="size-full object-cover col-span-2 row-span-2" />
+    <img src="./No.clipped-19.jpg" className="size-full object-cover col-span-2 row-span-5 col-start-4" />
+    <img src="./No.clipped-38.jpg" className="size-full object-cover col-span-2 row-span-3 col-start-2 row-start-3" />
+    <img src="./No.clipped-59.jpg" className="size-full object-cover row-span-4 row-start-4" />
+    <img src="./No.clipped-62.jpg" className="size-full object-cover row-span-2 col-start-1 row-start-8" />
+    <img src="./No.clipped-71.jpg" className="size-full object-cover row-span-4 col-start-2 col-span-4 row-start-6" />
   </div>
+
 }

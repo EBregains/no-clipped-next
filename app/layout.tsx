@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Header title="Descuento de apertura: 10% OFF en tus Remeras Clasicas!  " />
+        <Header title="Descuento de apertura: 10% OFF en tus Remeras Clasicas" />
         <NavBar />
         <main className="flex-1">
           {children}

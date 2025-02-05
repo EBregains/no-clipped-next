@@ -15,15 +15,11 @@ export default async function Product({
 
   return <>
     {product != undefined ?
-      <div className="w-full flex flex-col gap-4 items-center mt-6">
-        <div className="w-full max-w-[1000px] flex h-[600px]">
-          <Image src={product.image.url} alt={product.image.alt} width={400} height={600} />
-          <ProductShopForm product={product} />
-        </div>
-        <div className="w-full max-w-[1000px] flex h-[600px] bg-slate-100">
-
-        </div>
-      </div> :
+      <div className="w-full flex justify-center my-8 h-[700px]">
+        <Image src={product.image.url} alt={product.image.alt} width={500} height={500} />
+        <ProductShopForm product={product} />
+      </div>
+      :
       <>
         {/* <ProductNotFound /> */}
       </>
